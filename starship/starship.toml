@@ -1,0 +1,65 @@
+# ✧ Elvish Forest Theme ✧
+# A prompt that flows like the paths of Lothlórien
+
+command_timeout = 5000
+
+format = """
+$os\
+$username\
+[](bg:#4A7C5C fg:#C9A96E)\
+$directory\
+[](fg:#4A7C5C bg:#A8B8B0)\
+$git_branch\
+$git_status\
+[](fg:#A8B8B0 bg:#CC9544)\
+$golang\
+[](fg:#CC9544 bg:#A89688)\
+$time\
+[ ](fg:#A89688)\
+$character"""
+
+[username]
+show_always = true
+style_user = "fg:#2D2010 bg:#C9A96E"
+style_root = "fg:#2D2010 bg:#C9A96E"
+format = '[ 🧝 $user ]($style)'
+disabled = false
+
+[os]
+style = "bg:#C9A96E"
+disabled = true
+
+[directory]
+style = "fg:#F0E8D8 bg:#4A7C5C"
+format = "[  🌿 $path  ]($style)"
+truncation_length = 3
+
+[directory.substitutions]
+"Documents" = "📜 "
+"Downloads" = "🏹 "
+"Music" = "🎵 "
+"Pictures" = "🖼 "
+
+[git_branch]
+symbol = "🌳"
+style = "fg:#1A2A2A bg:#A8B8B0"
+format = '[  $symbol $branch ]($style)'
+
+[git_status]
+style = "fg:#1A2A2A bg:#A8B8B0"
+format = '[$all_status$ahead_behind  ]($style)'
+
+[golang]
+symbol = "🐹"
+style = "fg:#2D2010 bg:#CC9544"
+format = '[  $symbol ($version)  ]($style)'
+
+[time]
+disabled = false
+time_format = "%R"
+style = "fg:#F0E8D8 bg:#A89688"
+format = '[  🌙 $time  ]($style)'
+
+[character]
+success_symbol = '[✦](fg:#C9A96E)'
+error_symbol = '[✦](fg:#CC6666)'
